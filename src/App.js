@@ -5,8 +5,6 @@ import React, { Component } from "react";
 
 export default class App extends Component {
   state = {
-    info: "dvxd",
-    info2: "dg",
     userInput: "",
     displayedInput:"",
     displayedInputs: []
@@ -15,19 +13,13 @@ export default class App extends Component {
     this.setState({ userInput: event.target.value });
   };
   handleButtonClick = () => {
-    this.setState({ displayedInput: this.state.userInput }); // Butona tıklandığında input değerini displayedInput state'ine aktarın
-     
+    this.setState({ displayedInput: this.state.userInput }); // Butona tıklandığında input değerini displayedInput state'ine aktarın    
   }
   render() {
     return (
       <div>
-        <input
-          type="text"
-          value={this.state.userInput}
-          onChange={this.handleInputChange}   
-        />
-       <Button infot={this.state.displayedInput}  onclick={this.handleButtonClick}/>
-       <Label infot2={this.state.displayedInput} />
+       <Label userInput={this.state.userInput} displayedInput={this.state.displayedInput} handleInputChange={this.handleInputChange} />
+       <Button  onclick={this.handleButtonClick}/>
       </div>
     );
   }
