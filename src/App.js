@@ -15,11 +15,14 @@ export default class App extends Component {
   handleButtonClick = () => {
     this.setState({ displayedInput: this.state.userInput }); // Butona tıklandığında input değerini displayedInput state'ine aktarın    
   }
+  clearInput = () => {
+    this.setState({ userInput: "" });
+  };
   render() {
     return (
       <div>
        <Label userInput={this.state.userInput} displayedInput={this.state.displayedInput} handleInputChange={this.handleInputChange} />
-       <Button  onclick={this.handleButtonClick}/>
+       <Button  onclick={this.handleButtonClick} clearInput={this.clearInput}/>
       </div>
     );
   }
