@@ -13,17 +13,17 @@ export default class App extends Component {
     this.setState({ userInput: event.target.value });
   };
   handleButtonClick = () => {
-    this.setState({ displayedInput: this.state.userInput }); // Butona tıklandığında input değerini displayedInput state'ine aktarın    
+    this.setState({ displayedInput: this.state.displayedInput + " " + this.state.userInput }); // Butona tıklandığında input değerini displayedInput state'ine aktarın    
   }
   clearInput = () => {
     this.setState({ userInput: "" });
-  };
+  }; 
   render() {
     return (
       <div>
        <Label userInput={this.state.userInput} displayedInput={this.state.displayedInput} handleInputChange={this.handleInputChange} />
        <Button  onclick={this.handleButtonClick} clearInput={this.clearInput}/>
       </div>
-    );
+    )
   }
 }
